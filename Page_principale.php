@@ -80,12 +80,3 @@
 
 <?php
 
-spl_autoload_register(function($className){
-  $className = str_replace("\\","/",$className);
-  require "classes/" . $className . ".php";
-});
-
-use Roles\Lecteur;
-use Roles\Auteur;
-use Roles\Admin;
-use Roles\SuperAdmin;
