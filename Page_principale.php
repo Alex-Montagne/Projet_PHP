@@ -82,10 +82,15 @@
 
 spl_autoload_register(function($className){
   $className = str_replace("\\","/",$className);
-  require "classes/" . $className . ".php";
+  require $className . ".php";
 });
 
 use Roles\Lecteur;
 use Roles\Auteur;
 use Roles\Admin;
 use Roles\SuperAdmin;
+
+$a = new Lecteur("a",1);
+$superAdmin = new SuperAdmin("SA",0);
+
+$superAdmin -> nommerAdmin("a",1);
