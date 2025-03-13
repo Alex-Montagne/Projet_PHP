@@ -2,6 +2,11 @@
 
 namespace Roles;
 
-class Lecteur{
-    private $_nom;
+class Lecteur extends SuperAdmin{
+    protected string $_nom;
+    protected int $_id;
+
+    public function __construct($nom,$id){
+        parent::__construct($nom,$id);
+    }
 }
